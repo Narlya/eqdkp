@@ -8,7 +8,7 @@
  * Date:        $Date$
  * -----------------------------------------------------------------------
  * @author      $Author$
- * @copyright   2002-2008 The EQdkp Project Team
+ * @copyright   2002-2012 The EQdkp Project Team
  * @link        http://eqdkp.com/
  * @package     eqdkp
  * @version     $Rev$
@@ -48,7 +48,7 @@ class EQdkp
         // Start a script timer if we're debugging
         if ( DEBUG )
         {
-            $mc_split = split(' ', microtime());
+            $mc_split = explode(' ', microtime());
             $this->timer_start = $mc_split[0] + $mc_split[1];
             unset($mc_split);
         }
@@ -415,7 +415,7 @@ class EQdkp
         
             if ( DEBUG )
             {
-                $mc_split = split(' ', microtime());
+                $mc_split = explode(' ', microtime());
                 $this->timer_end = $mc_split[0] + $mc_split[1];
                 unset($mc_split);
         
