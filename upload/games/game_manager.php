@@ -8,7 +8,7 @@
  * Date:        $Date$
  * -----------------------------------------------------------------------
  * @author      $Author$
- * @copyright   2002-2008 The EQdkp Project Team
+ * @copyright   2002-2012 The EQdkp Project Team
  * @link        http://eqdkp.com/
  * @package     games
  * @version     $Rev$
@@ -39,7 +39,6 @@ class Game_Manager
     function Game_Manager($game_id = false)
     {
         $this->games        = array();
-
         $this->armor_types  = array();
         $this->classes      = array();
         $this->races        = array();
