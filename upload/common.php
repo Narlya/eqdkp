@@ -43,7 +43,7 @@ if ( !defined('EQDKP_INSTALLED') )
 define('EQDKP_VERSION', '1.4.0 B2');
 define('NO_CACHE', true);
 
-define('DEBUG', 2);
+define('DEBUG', 0);
 
 // User Levels
 define('ANONYMOUS', -1);
