@@ -35,7 +35,7 @@ CREATE TABLE `eqdkp_users` (
   `user_active` enum('0','1') NOT NULL default '1',
   `user_newpassword` varchar(40),
   PRIMARY KEY (`user_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_auth_options;
 CREATE TABLE `eqdkp_auth_options` (
@@ -44,7 +44,7 @@ CREATE TABLE `eqdkp_auth_options` (
   `auth_default` enum('N','Y') NOT NULL default 'N',
   PRIMARY KEY (auth_id),
   KEY auth_value (`auth_value`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_auth_users;
 CREATE TABLE `eqdkp_auth_users` (
@@ -52,7 +52,7 @@ CREATE TABLE `eqdkp_auth_users` (
   `auth_id` smallint(3) unsigned NOT NULL,
   `auth_setting` ENUM('N','Y') NOT NULL default 'N',
   UNIQUE KEY `user_auth` (`user_id`,`auth_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_sessions;
 CREATE TABLE `eqdkp_sessions` (
@@ -63,7 +63,7 @@ CREATE TABLE `eqdkp_sessions` (
   `session_page` varchar(100) NOT NULL default '0',
   `session_ip` varchar(15) NOT NULL,
   PRIMARY KEY (`session_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_member_user;
 CREATE TABLE eqdkp_member_user (
@@ -71,7 +71,7 @@ CREATE TABLE eqdkp_member_user (
   `user_id` smallint(5) unsigned NOT NULL,
   KEY `member_id` (`member_id`),
   KEY `user_id` (`user_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Basic DKP tables
@@ -87,7 +87,7 @@ CREATE TABLE `eqdkp_adjustments` (
   `adjustment_updated_by` varchar(30),
   `adjustment_group_key` varchar(32),
   PRIMARY KEY  (`adjustment_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_events;
 CREATE TABLE `eqdkp_events` (
@@ -97,7 +97,7 @@ CREATE TABLE `eqdkp_events` (
   `event_added_by` varchar(30) NOT NULL,
   `event_updated_by` varchar(30),
   PRIMARY KEY (`event_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_items;
 CREATE TABLE `eqdkp_items` (
@@ -111,7 +111,7 @@ CREATE TABLE `eqdkp_items` (
   `item_updated_by` varchar(30),
   `item_group_key` varchar(32),
   PRIMARY KEY  (`item_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_members;
 CREATE TABLE `eqdkp_members` (
@@ -129,7 +129,7 @@ CREATE TABLE `eqdkp_members` (
   `member_class_id` smallint(3) unsigned NOT NULL default '0',
   `member_rank_id` smallint(3) NOT NULL default '0',
   PRIMARY KEY  (`member_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_member_ranks;
 CREATE TABLE `eqdkp_member_ranks` (
@@ -138,7 +138,7 @@ CREATE TABLE `eqdkp_member_ranks` (
   `rank_hide` enum('0','1') NOT NULL DEFAULT '0',
   `rank_prefix` varchar(75) NOT NULL default '',
   `rank_suffix` varchar(75) NOT NULL default ''
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_news;
 CREATE TABLE `eqdkp_news` (
@@ -149,7 +149,7 @@ CREATE TABLE `eqdkp_news` (
   `user_id` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`news_id`),
   KEY `user_id` (`user_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_raids;
 CREATE TABLE `eqdkp_raids` (
@@ -161,14 +161,14 @@ CREATE TABLE `eqdkp_raids` (
   `raid_added_by` varchar(30) NOT NULL,
   `raid_updated_by` varchar(30),
   PRIMARY KEY  (`raid_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_raid_attendees;
 CREATE TABLE `eqdkp_raid_attendees` (
   `raid_id` mediumint(8) unsigned NOT NULL,
   `member_name` varchar(30) NOT NULL,
   UNIQUE KEY `raid_member` (`raid_id`,`member_name`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Logging
@@ -187,7 +187,7 @@ CREATE TABLE `eqdkp_logs` (
   KEY `admin_id` (`admin_id`),
   KEY `log_type` (`log_type`),
   KEY `log_ipaddress` (`log_ipaddress`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Styles
@@ -228,7 +228,7 @@ CREATE TABLE `eqdkp_styles` (
   `input_border_color` varchar(6) default NULL,
   `input_border_style` varchar(30) default NULL,
   PRIMARY KEY  (`style_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS eqdkp_style_config;
 CREATE TABLE `eqdkp_style_config` (
@@ -239,7 +239,7 @@ CREATE TABLE `eqdkp_style_config` (
   `date_time` varchar(20) NOT NULL default 'm/d/y h:ia T',
   `logo_path` varchar(255) NOT NULL default 'logo.gif',
   PRIMARY KEY (`style_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Plugins
@@ -255,7 +255,7 @@ CREATE TABLE `eqdkp_plugins` (
   `plugin_version` varchar(7) NOT NULL,
   PRIMARY KEY (`plugin_id`),
   KEY `plugin_code` (`plugin_code`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Games
@@ -272,7 +272,7 @@ CREATE TABLE `eqdkp_factions` (
   `faction_key` varchar(30) NOT NULL,
   `faction_hide` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`faction_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 CREATE TABLE `eqdkp_races` (
   `race_id` smallint(3) unsigned NOT NULL UNIQUE,
@@ -281,7 +281,7 @@ CREATE TABLE `eqdkp_races` (
   `race_faction_id` smallint(3) NOT NULL DEFAULT '0',
   `race_hide` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`race_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 CREATE TABLE `eqdkp_classes` (
   `class_id` smallint(3) unsigned NOT NULL UNIQUE,
@@ -289,14 +289,14 @@ CREATE TABLE `eqdkp_classes` (
   `class_key` varchar(30) NOT NULL,
   `class_hide` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`class_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 CREATE TABLE `eqdkp_armor_types` (
   `armor_type_id` smallint(3) unsigned NOT NULL UNIQUE,
   `armor_type_name` varchar(50) NOT NULL,
   `armor_type_key` varchar(30) NOT NULL,
   PRIMARY KEY (`armor_type_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 CREATE TABLE `eqdkp_class_armor` (
   `class_id` smallint(3) unsigned NOT NULL,
@@ -306,7 +306,7 @@ CREATE TABLE `eqdkp_class_armor` (
   PRIMARY KEY (`class_id`, `armor_type_id`),
   INDEX classes (`class_id`),
   INDEX armor_types (`armor_type_id`)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Game Foreign-key constraints
