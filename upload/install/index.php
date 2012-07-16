@@ -78,7 +78,7 @@ function deregister_globals()
     unset($input);
 }
 
-set_magic_quotes_runtime(0);
+//set_magic_quotes_runtime(0);
 
 // Be paranoid with passed vars
 if (@ini_get('register_globals') == '1' || strtolower(@ini_get('register_globals')) == 'on')
@@ -101,7 +101,7 @@ require($eqdkp_root_path . 'includes/functions_install.php');
 
 // System defaults / available database abstraction layers
 $DEFAULTS = array(
-    'version'       => '1.4.0 B2',
+    'version'       => '1.4.1 B1',
     'default_lang'  => 'English',
     'default_style' => '1',
     'default_game'  => 'wow',
