@@ -8,7 +8,7 @@
  * Date:        $Date$
  * -----------------------------------------------------------------------
  * @author      $Author$
- * @copyright   2002-2008 The EQdkp Project Team
+ * @copyright   2002-2012 The EQdkp Project Team
  * @link        http://eqdkp.com/
  * @package     eqdkp
  * @version     $Rev$
@@ -34,17 +34,17 @@ $lang = array_merge($lang, array(
     'GAME_NAME'         => 'World of Warcraft',
     'GAME_ID'           => 'WoW',
 
-	'GAME_ARMOR'        => 'Armor',
+    'GAME_ARMOR'        => 'Armor',
     'GAME_CLASS'        => 'Class',
     'GAME_RACE'         => 'Race',
-	'GAME_FACTION'      => 'Faction',
+    'GAME_FACTION'      => 'Faction',
 
     'ARMOR_CLOTH'       => 'Cloth',
     'ARMOR_LEATHER'     => 'Leather',
     'ARMOR_MAIL'        => 'Mail',
     'ARMOR_PLATE'       => 'Plate',
 
-	'CLASS_DEATH_KNIGHT'=> 'Death Knight',
+    'CLASS_DEATH_KNIGHT'=> 'Death Knight',
     'CLASS_DRUID'       => 'Druid',
     'CLASS_HUNTER'      => 'Hunter',
     'CLASS_MAGE'        => 'Mage',
