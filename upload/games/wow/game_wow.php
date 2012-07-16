@@ -8,7 +8,7 @@
  * Date:        $Date$
  * -----------------------------------------------------------------------
  * @author      $Author$
- * @copyright   2002-2008 The EQdkp Project Team
+ * @copyright   2002-2012 The EQdkp Project Team
  * @link        http://eqdkp.com/
  * @package     games
  * @version     $Rev$
@@ -24,8 +24,8 @@ $game_info = array(
     'id'        => 'wow',
     'name'      => 'World of Warcraft',
     'shortname' => 'WoW',
-    'version'   => '1.0',
-    'max_level' => 80,
+    'version'   => '4.3.2',
+    'max_level' => 85,
     
     'available' => array(
         'armor_types' => true,
@@ -53,55 +53,55 @@ if (!isset($get_gameinfo))
         
         // Classes
         'classes'      => array(
-            'druid'    => array(
+           'death_knight'=> array(
                 'id'       => 1, 
+                'name'     => 'Death Knight', 
+                'color'    => 'C41E3B',
+            ),
+           'druid'      => array(
+                'id'       => 2, 
                 'name'     => 'Druid', 
                 'color'    => 'FF7D0A',
             ),
-            'hunter'   => array(
-                'id'       => 2, 
+            'hunter'    => array(
+                'id'       => 3, 
                 'name'     => 'Hunter', 
                 'color'    => 'ABD473',
             ),
-            'mage'     => array(
-                'id'       => 3, 
+            'mage'      => array(
+                'id'       => 4, 
                 'name'     => 'Mage', 
                 'color'    => '69CCF0',
             ),
-            'paladin'  => array(
-                'id'       => 4, 
+            'paladin'   => array(
+                'id'       => 5, 
                 'name'     => 'Paladin', 
                 'color'    => 'F58CBA',
             ),
-            'priest'   => array(
-                'id'       => 5, 
+            'priest'    => array(
+                'id'       => 6, 
                 'name'     => 'Priest', 
                 'color'    => 'FFFFFF',
             ),
-            'rogue'    => array(
-                'id'       => 6, 
+            'rogue'     => array(
+                'id'       => 7, 
                 'name'     => 'Rogue', 
                 'color'    => 'FFF569',
             ),
-            'shaman'   => array(
-                'id'       => 7, 
+            'shaman'    => array(
+                'id'       => 8, 
                 'name'     => 'Shaman', 
                 'color'    => '2459FF',
             ),
-            'warlock'  => array(
-                'id'       => 8, 
+            'warlock'   => array(
+                'id'       => 9, 
                 'name'     => 'Warlock', 
                 'color'    => '9482CA',
             ),
-            'warrior'  => array(
-                'id'       => 9, 
+            'warrior'   => array(
+                'id'       => 10, 
                 'name'     => 'Warrior', 
                 'color'    => 'C79C6E',
-            ),
-            'death_knight' => array(
-                'id'       => 10, 
-                'name'     => 'Death Knight', 
-                'color'    => 'C41E3B',
             ),
         ),
         
@@ -109,23 +109,19 @@ if (!isset($get_gameinfo))
         'class_armor'  => array(
             array('class' => 'death_knight', 'armor' => 'plate'),
             array('class' => 'druid',   'armor' => 'leather'),
-            array('class' => 'hunter',  'armor' => 'leather'),
-            array('class' => 'hunter',  'armor' => 'mail', 'min' => 40),
+            array('class' => 'hunter',  'armor' => 'mail'),
             array('class' => 'mage',    'armor' => 'cloth'),
-            array('class' => 'paladin', 'armor' => 'mail'),
-            array('class' => 'paladin', 'armor' => 'plate', 'min' => 40),
+            array('class' => 'paladin', 'armor' => 'plate'),
             array('class' => 'priest',  'armor' => 'cloth'),
             array('class' => 'rogue',   'armor' => 'leather'),
-            array('class' => 'shaman',  'armor' => 'leather'),
-            array('class' => 'shaman',  'armor' => 'mail', 'min' => 40),
+            array('class' => 'shaman',  'armor' => 'mail'),
             array('class' => 'warlock', 'armor' => 'cloth'),
-            array('class' => 'warrior', 'armor' => 'mail'),
-            array('class' => 'warrior', 'armor' => 'plate', 'min' => 40),
+            array('class' => 'warrior', 'armor' => 'plate'),
         ),
         
         // Factions
         'factions'     => array(
-            'alliance' => array('id' => 1, 'name' => 'Alliance', 'races' => array('human','draenei','dwarf','gnome','night_elf')),
+            'alliance' => array('id' => 1, 'name' => 'Alliance', 'races' => array('draenei','dwarf','gnome','human','night_elf')),
             'horde'    => array('id' => 2, 'name' => 'Horde', 'races' => array('blood_elf','orc','tauren','troll','undead')),
         ),
 
