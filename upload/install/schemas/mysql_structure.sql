@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS eqdkp_config;
 CREATE TABLE `eqdkp_config` (
   `config_name` varchar(255) PRIMARY KEY NOT NULL,
   `config_value` varchar(255)
-)TYPE=InnoDB;
+)ENGINE=InnoDB;
 
 # --------------------------------------------------------
 ### Users and Permissions
