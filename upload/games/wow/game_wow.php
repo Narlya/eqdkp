@@ -33,8 +33,7 @@ $game_info = array(
         'class_armor' => true,
         'factions'    => true,
         'races'       => true,
-        
-        'professions' => false,
+		'professions' => false,
         'parsing'     => true,
     ),
 );
@@ -107,85 +106,97 @@ if (!isset($get_gameinfo))
         
         // Class-Armor mappings
         'class_armor'  => array(
-            array('class' => 'death_knight', 'armor' => 'plate'),
-            array('class' => 'druid',   'armor' => 'leather'),
-            array('class' => 'hunter',  'armor' => 'mail'),
-            array('class' => 'mage',    'armor' => 'cloth'),
-            array('class' => 'paladin', 'armor' => 'plate'),
-            array('class' => 'priest',  'armor' => 'cloth'),
-            array('class' => 'rogue',   'armor' => 'leather'),
-            array('class' => 'shaman',  'armor' => 'mail'),
-            array('class' => 'warlock', 'armor' => 'cloth'),
-            array('class' => 'warrior', 'armor' => 'plate'),
+            array('class' => 'death_knight','armor' => 'plate'),
+            array('class' => 'druid',   	'armor' => 'leather'),
+            array('class' => 'hunter',  	'armor' => 'mail'),
+            array('class' => 'mage',    	'armor' => 'cloth'),
+            array('class' => 'paladin', 	'armor' => 'plate'),
+            array('class' => 'priest',  	'armor' => 'cloth'),
+            array('class' => 'rogue',   	'armor' => 'leather'),
+            array('class' => 'shaman',  	'armor' => 'mail'),
+            array('class' => 'warlock', 	'armor' => 'cloth'),
+            array('class' => 'warrior', 	'armor' => 'plate'),
         ),
         
         // Factions
         'factions'     => array(
-            'alliance' => array('id' => 1, 'name' => 'Alliance', 'races' => array('draenei','dwarf','gnome','human','night_elf')),
-            'horde'    => array('id' => 2, 'name' => 'Horde', 'races' => array('blood_elf','orc','tauren','troll','undead')),
+            'alliance' => array('id' => 1, 'name' => 'Alliance', 'races' => array('draenei','dwarf','gnome','human','night_elf','worgen')),
+            'horde'    => array('id' => 2, 'name' => 'Horde', 'races' => array('blood_elf','goblin','orc','tauren','troll','undead')),
         ),
 
         // Races
         'races'        => array(
-            'blood_elf'  => array(
-                'id'       => 10, 
-                'name'     => 'Blood Elf', 
-                'faction'  => 'horde',
-                'classes'  => array('death_knight','priest','rogue','mage','hunter','warlock','paladin')
-            ),
-            'human'    => array(
-                'id'       => 2, 
-                'name'     => 'Human', 
-                'faction'  => 'alliance',
-                'classes'  => array('death_knight','priest','rogue','warrior','mage','warlock','paladin')
-            ),
             'draenei'  => array(
-                'id'       => 9, 
-                'name'     => 'Draenei', 
-                'faction'  => 'alliance',
-                'classes'  => array('death_knight','priest','warrior','mage','hunter','shaman','paladin')
+                'id'       	=> 11, 
+                'name'     	=> 'Draenei', 
+                'faction'  	=> 'alliance',
+                'classes'  	=> array('death_knight','priest','warrior','mage','hunter','shaman','paladin')
             ),
             'dwarf'    => array(
-                'id'       => 3, 
-                'name'     => 'Dwarf', 
-                'faction'  => 'alliance',
-                'classes'  => array('death_knight','priest','rogue','warrior','hunter')
+                'id'       	=> 3, 
+                'name'     	=> 'Dwarf', 
+                'faction'  	=> 'alliance',
+                'classes'  	=> array('death_knight','priest','rogue','warrior','hunter')
             ),
             'gnome'    => array(
-                'id'       => 1, 
-                'name'     => 'Gnome', 
-                'faction'  => 'alliance',
-                'classes'  => array('death_knight','rogue','warrior','mage','warlock')
+                'id'       	=> 7, 
+                'name'     	=> 'Gnome', 
+                'faction'  	=> 'alliance',
+                'classes'  	=> array('death_knight','rogue','warrior','mage','warlock')
+            ),
+            'human'    => array(
+                'id'       	=> 1, 
+                'name'     	=> 'Human', 
+                'faction'  	=> 'alliance',
+                'classes'  	=> array('death_knight','priest','rogue','warrior','mage','warlock','paladin')
             ),
             'night_elf'  => array(
-                'id'       => 4, 
-                'name'     => 'Night Elf', 
-                'faction'  => 'alliance',
-                'classes'  => array('death_knight','priest','rogue','warrior','druid','hunter')
+                'id'       	=> 4, 
+                'name'     	=> 'Night Elf', 
+                'faction'  	=> 'alliance',
+                'classes'  	=> array('death_knight','priest','rogue','warrior','druid','hunter')
             ),
-            'orc'      => array(
-                'id'       => 7, 
-                'name'     => 'Orc', 
-                'faction'  => 'horde',
-                'classes'  => array('death_knight','rogue','warrior','hunter','warlock','shaman')
+			'worgen'	=> array(
+				'id'		=> 22,
+				'name'		=> 'Worgen',
+				'faction'	=> 'alliance',
+				'classes'	=> array('death_knight','druid','hunter','mage','priest','rogue','warlock','warrior')
+			),
+            'blood_elf'	=> array(
+                'id'       	=> 10, 
+                'name'     	=> 'Blood Elf', 
+                'faction'  	=> 'horde',
+                'classes'  	=> array('death_knight','priest','rogue','mage','hunter','warlock','paladin')
             ),
-            'tauren'   => array(
-                'id'       => 8, 
-                'name'     => 'Tauren', 
-                'faction'  => 'horde',
-                'classes'  => array('death_knight','warrior','druid','hunter','shaman')
+			'goblin'   	=> array(
+				'id'		=> 9,
+				'name'		=> 'Goblin',
+				'faction'	=> 'horde',
+				'classes'	=> array('death_knight','hunter','mage','priest','rogue','shaman','warlock','warrior')
+			),
+            'orc'		=> array(
+                'id'       	=> 2, 
+                'name'     	=> 'Orc', 
+                'faction'  	=> 'horde',
+                'classes'  	=> array('death_knight','rogue','warrior','hunter','warlock','shaman')
             ),
-            'troll'    => array(
-                'id'       => 5, 
-                'name'     => 'Troll', 
-                'faction'  => 'horde',
-                'classes'  => array('death_knight','priest','rogue','warrior','mage','hunter','shaman')
+            'tauren'   	=> array(
+                'id'       	=> 6, 
+                'name'     	=> 'Tauren', 
+                'faction'  	=> 'horde',
+                'classes'  	=> array('death_knight','warrior','druid','hunter','shaman')
             ),
-            'undead'   => array(
-                'id'       => 6, 
-                'name'     => 'Undead', 
-                'faction'  => 'horde',
-                'classes'  => array('death_knight','priest','rogue','warrior','mage','warlock')
+            'troll'    	=> array(
+                'id'       	=> 8, 
+                'name'     	=> 'Troll', 
+                'faction'  	=> 'horde',
+                'classes'  	=> array('death_knight','priest','rogue','warrior','mage','hunter','shaman')
+            ),
+            'undead'   	=> array(
+                'id'       	=> 5, 
+                'name'     	=> 'Undead', 
+                'faction'  	=> 'horde',
+                'classes'  	=> array('death_knight','priest','rogue','warrior','mage','warlock')
             ),
         ),
         
